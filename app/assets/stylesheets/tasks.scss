@@ -1,0 +1,19 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+ul li.checked {
+  color: black;
+  text-decoration: line-through;
+}
