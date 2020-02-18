@@ -2,13 +2,16 @@
 <ul>
   <% @tasks.each do |task| %>
     <% if task.completed %>
-      <li class="checked"> <%= link_to task.title, "/tasks/#{task.id}" %>  </li>
-      <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Delete #{task.title}"} %>
-    <% else %>
-      <li> <%= link_to task.title, "/tasks/#{task.id}" %> </li>
-      <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Delete #{task.title}"} %>
+      <div class="item">
+        <li class="checked element"> <%= link_to task.title, "/tasks/#{task.id}" %>  </li>
+        <p class="element"> <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Delete #{task.title}"} %> </p>
+      </div>
+      <% else %>
+      <div class="item">
+        <li class="element"> <%= link_to task.title, "/tasks/#{task.id}" %> </li>
+        <p class="element"> <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Delete #{task.title}"} %> </p>
+      </div>
     <% end %>
-    <% %>
   <% end %>
 </ul>
 <%= link_to "Add a new task", "/tasks/new" %>
